@@ -1,6 +1,6 @@
 import { useLoaderData, useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import UserPicture from '../components/UserPicture';
+import UserDetail from '../components/UserDetail';
 import UserLinks from '../components/UserLinks';
 import CopyCurrentLink from '../components/CopyCurrentLink';
 import { useEffect } from 'react';
@@ -23,6 +23,7 @@ export default function UserProfile() {
 
 	const isMe = user ? user.username === username : false;
 	const picture = isMe ? user?.profilePicture : links[0]?.belongsTo.profilePicture;
+	const bio = isMe ? user?.bio : links[0]?.belongsTo.bio;
 	const title = isMe ? 'My Profile' : links.length === 0 ? 'No profile found' : `${username}'s profile`;
 	const hasProfile = isMe || links.length > 0;
 
@@ -33,7 +34,7 @@ export default function UserProfile() {
 					{/* if profile exist show profile and its data  */}
 					{hasProfile ? (
 						<>
-							<UserPicture image={picture} name={username} />
+							<UserDetail bio={bio} image={picture} name={username} />
 							{/* if there is no link, show add button  */}
 							{links.length === 0 ? (
 								<div>
