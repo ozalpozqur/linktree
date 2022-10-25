@@ -1,6 +1,6 @@
 import Modal from './Modal';
 import { useAuthStore, useLinkStore } from '../store';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Select from 'react-select';
 import altogic from '../lib/altogic';
 import LoadingIcon from './LoadingIcon';
