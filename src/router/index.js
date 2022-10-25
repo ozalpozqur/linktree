@@ -16,7 +16,7 @@ const linkLoader = async ({ params }) => {
 		.sort('createdAt', 'desc')
 		.get();
 
-	const { data: linkIcons, errors: linkIconsError } = await altogic.db.model('linkIcons').get();
+	const { data: linkIcons, errors: linkIconsError } = await altogic.db.model('linkTypes').get();
 
 	if (errors || linkIconsError) {
 		throw new Response('Somethings went wrong', { status: 500 });
