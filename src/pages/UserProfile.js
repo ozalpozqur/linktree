@@ -28,16 +28,13 @@ export default function UserProfile() {
 
 	return (
 		<>
-			<Helmet>
-				<title>{title}</title>
-			</Helmet>
-			<EditLink />
-			<AddLink />
 			<div className="bg-black text-white flex justify-center">
 				<div className="w-full py-16 px-4 gap-8 max-w-2xl grid grid-rows-[auto_1fr]">
+					{/* if profile exist show profile and its data  */}
 					{hasProfile ? (
 						<>
 							<UserPicture image={picture} name={username} />
+							{/* if there is no link, show add button  */}
 							{links.length === 0 ? (
 								<div>
 									<div className="text-center text-2xl">
@@ -49,9 +46,10 @@ export default function UserProfile() {
 									</div>
 								</div>
 							) : (
+								// show links
 								<UserLinks setLinks={setLinks} links={links} />
 							)}
-
+							{/* the buttons on the top */}
 							<div className="absolute top-[27px] right-[13px] flex items-center gap-2">
 								<CopyCurrentLink />
 								{isMe && (
@@ -63,6 +61,7 @@ export default function UserProfile() {
 							</div>
 						</>
 					) : (
+						/* if profile doesn't exist show 404 :) */
 						<div className="flex gap-5 items-center flex-col justify-center">
 							<h1 className="text-center text-4xl md:text-7xl">No Matching Profile</h1>
 							<img
@@ -74,6 +73,11 @@ export default function UserProfile() {
 					)}
 				</div>
 			</div>
+			<Helmet>
+				<title>{title}</title>
+			</Helmet>
+			<EditLink />
+			<AddLink />
 		</>
 	);
 }
