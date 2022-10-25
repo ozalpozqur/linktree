@@ -26,10 +26,7 @@ export default function Login() {
 	};
 
 	return (
-		<div className="flex-row-reverse lg:flex lg:justify-end relative">
-			<div className="hidden relative -z-10 h-32 items-center justify-center overflow-hidden lg:!flex lg:fixed lg:right-0 lg:top-0 lg:min-h-screen lg:w-1/3 lg:shrink-0 bg-chalk">
-				<img loading="lazy" className="h-full w-full object-cover" src="/auth-bg.png" alt="auth background" />
-			</div>
+		<div className="flex justify-center">
 			<main className="relative pt-8 flex w-full md:py-lg md:px-2xl lg:p-12 lg:w-2/3 justify-center">
 				<div className="p-lg pt-16 lg:!pt-24 lg:w-[640px]">
 					<div className="md:container mx-auto">
