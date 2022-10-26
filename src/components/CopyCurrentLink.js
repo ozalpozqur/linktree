@@ -1,4 +1,4 @@
-import copy from 'copy-text-to-clipboard';
+import copy from 'copy-to-clipboard';
 import { MdContentCopy, MdOutlineCheck } from 'react-icons/md';
 import { useState } from 'react';
 
@@ -6,11 +6,16 @@ export default function CopyCurrentLink({ className }) {
 	const [copied, setCopied] = useState(false);
 
 	const onClickHandler = async () => {
-		copy(window.location.href);
+		if (navigator.share) {
+			await navigator.share({
+				title: document.title,
+				url: window.location.href,
+			});
+		} else {
+			copy(window.location.href);
+		}
 		setCopied(true);
-		setTimeout(() => {
-			setCopied(false);
-		}, 2000);
+		setTimeout(() => setCopied(false), 2000);
 	};
 
 	return (
