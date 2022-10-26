@@ -51,7 +51,7 @@ export default function UserProfile() {
 								<UserLinks setLinks={setLinks} links={links} />
 							)}
 							{/* the buttons on the top */}
-							<div className="absolute top-[27px] right-[13px] flex items-center gap-2">
+							<div className="absolute top-2 right-2 sm:top-[27px] sm:right-[13px] flex items-center gap-2">
 								<CopyCurrentLink />
 								{isMe && (
 									<>
