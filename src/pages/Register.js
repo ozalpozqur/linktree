@@ -58,13 +58,17 @@ export default function Register() {
 										ref={usernameRef}
 										placeholder="Username"
 										name="username"
+										pattern="[A-Za-z0-9]+"
 										type="text"
-										autoComplete="username"
+										autoComplete="new-username"
 										className="input peer grow"
 										required
 									/>
 								</div>
 							</div>
+							<span className="block leading-none text-[12px] text-pansy mt-1 text-right pr-1 -mt-1">
+								English letters and numbers only
+							</span>
 							<div className="rounded-[10px] relative focus-within:ring-2 focus-within:ring-black transition ease-out duration-75 hover:shadow-[inset_0_0_0_2px_#e0e2d9] hover:focus-within:shadow-none">
 								<div className="flex rounded-[10px] leading-[48px] border-solid border-2 border-transparent">
 									<input
