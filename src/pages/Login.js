@@ -1,21 +1,26 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { useAuthStore } from '../store';
 import altogic from '../lib/altogic';
+import ShowApiError from '../components/ShowApiError';
 
 export default function Login() {
 	const emailRef = useRef(null);
 	const passwordRef = useRef(null);
+	const [error, setError] = useState(null);
 
 	const { setUser, setSession } = useAuthStore();
 	const navigate = useNavigate();
 
 	const login = async (email, password) => {
+		setError(null);
 		const { user, session, errors } = await altogic.auth.signInWithEmail(email, password);
 		if (!errors) {
 			setUser(user);
 			setSession(session);
 			navigate(`/${user.username}`);
+		} else {
+			setError(errors.items);
 		}
 	};
 	const handleSubmit = async e => {
@@ -28,13 +33,14 @@ export default function Login() {
 	return (
 		<div className="flex justify-center">
 			<main className="relative pt-8 flex w-full md:py-lg md:px-2xl lg:p-12 lg:w-2/3 justify-center">
-				<div className="p-lg pt-16 lg:!pt-24 lg:w-[640px]">
+				<div className="p-lg pt-16 lg:!pt-24 w-full lg:w-[600px]">
 					<div className="md:container mx-auto">
 						<div className="mb-2xl">
 							<h1 className="text-black text-[32px] tracking-[-1px] lg:tracking-[-2px] lg:text-[3rem] font-extrabold leading-heading mb-4">
 								Log in to your Linktree
 							</h1>
 						</div>
+						<ShowApiError error={error} />
 						<form onSubmit={handleSubmit} autoComplete="off" className="flex flex-col gap-2">
 							<div className="rounded-[10px] relative focus-within:ring-2 focus-within:ring-black transition ease-out duration-75 hover:shadow-[inset_0_0_0_2px_#e0e2d9] hover:focus-within:shadow-none">
 								<div className="flex rounded-[10px] leading-[48px] border-solid border-2 border-transparent">
@@ -45,8 +51,8 @@ export default function Login() {
 											name="email"
 											type="email"
 											autoComplete="email"
-											className="input peer"
 											required
+											className="input peer"
 										/>
 									</div>
 								</div>
