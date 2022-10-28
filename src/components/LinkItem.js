@@ -27,39 +27,45 @@ export default function LinkItem({ data }) {
 
 	return (
 		<>
-			<article className="flex items-center bg-[#222222] min-h-[3.5rem] rounded-[14px] text-center relative hover:scale-[1.02] transition">
+			<article
+				className={`grid bg-[#222222] min-h-[3.5rem] rounded-[14px] text-center hover:scale-[1.02] px-2 transition ${
+					isMe ? 'grid-cols-[40px_40px_1fr_40px_40px]' : 'grid-cols-[40px_1fr_40px]'
+				}`}
+			>
+				<span className="flex items-center justify-center h-full">
+					<img className="w-6 h-6 lg:w-8 lg:h-8" src={data.icon.url} alt="" />
+				</span>
+				{isMe && <span />}
 				<a
 					rel="noreferrer"
 					target="_blank"
-					className={`flex-1 flex items-center py-4 justify-center ${isMe ? 'pl-32' : 'pl-16'}`}
+					className="flex-1 h-full flex items-center justify-center text-sm md:text-base"
 					href={data.url}
 				>
-					<span className="w-[60px] absolute top-0 left-0 bottom-0 flex items-center justify-center">
-						<img className="w-8 h-8" src={data.icon.url} alt="" />
-					</span>
-					<span className="text-sm md:text-base">{data.title}</span>
+					{data.title}
 				</a>
-
-				<button
-					onClick={deleteHandler}
-					className={`w-[60px] h-full grid place-items-center !outline-none ${!isMe ? 'hidden' : ''}`}
-					hidden={!isMe}
-				>
-					{deleteLoading ? (
-						<LoadingIcon className="w-8 h-8" />
-					) : (
-						<FiTrash size={20} className="!outline-none" />
-					)}
-				</button>
-				<button
-					onClick={editHandler}
-					className={`w-[60px] h-full grid place-items-center !outline-none ${
-						!isMe ? 'invisible pointer-events-none' : ''
-					}`}
-					hidden={!isMe}
-				>
-					<FiEdit2 size={20} className="!outline-none" />
-				</button>
+				{isMe && (
+					<>
+						<button
+							onClick={deleteHandler}
+							className="h-full grid place-items-center !outline-none"
+							hidden={!isMe}
+						>
+							{deleteLoading ? (
+								<LoadingIcon className="w-4 h-4 md:h-5 md:w-5" />
+							) : (
+								<FiTrash className="!outline-none w-4 h-4 md:h-5 md:w-5" />
+							)}
+						</button>
+						<button
+							onClick={editHandler}
+							className="h-full grid place-items-center !outline-none"
+							hidden={!isMe}
+						>
+							<FiEdit2 className="!outline-none w-4 h-4 md:h-5 md:w-5" />
+						</button>
+					</>
+				)}
 			</article>
 		</>
 	);
