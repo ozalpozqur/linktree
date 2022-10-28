@@ -1,7 +1,8 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import altogic from '../lib/altogic';
 import { useAuthStore } from '../store';
+import ShowApiError from '../components/ShowApiError';
 
 export default function Register() {
 	const { setUser, setSession } = useAuthStore();
@@ -9,6 +10,7 @@ export default function Register() {
 	const emailRef = useRef(null);
 	const passwordRef = useRef(null);
 	const usernameRef = useRef(null);
+	const [error, setError] = useState(null);
 
 	const handleSubmit = async e => {
 		e.preventDefault();
@@ -18,6 +20,7 @@ export default function Register() {
 		await register({ email, password, username });
 	};
 	const register = async ({ email, password, username }) => {
+		setError(null);
 		const { user, session, errors } = await altogic.auth.signUpWithEmail(email, password, {
 			username,
 		});
@@ -25,6 +28,8 @@ export default function Register() {
 			setUser(user);
 			setSession(session);
 			navigate(`/${user.username}`);
+		} else {
+			setError(errors.items);
 		}
 	};
 
@@ -38,6 +43,7 @@ export default function Register() {
 								Create your account
 							</h1>
 						</div>
+						<ShowApiError error={error} />
 						<form onSubmit={handleSubmit} className="flex flex-col gap-2">
 							<div className="rounded-[10px] relative focus-within:ring-2 focus-within:ring-black transition ease-out duration-75 hover:shadow-[inset_0_0_0_2px_#e0e2d9] hover:focus-within:shadow-none">
 								<div className="flex rounded-[10px] leading-[48px] border-solid border-2 border-transparent">
