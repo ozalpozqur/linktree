@@ -21,6 +21,6 @@
         @apply text-black leading-[48px] placeholder:leading-[48px] placeholder-concrete text-sm h-12 block p-4 w-full rounded-[0.5rem] bg-chalk transition duration-75 ease-out outline-none;
     }
     .submit-btn {
-        @apply relative transition duration-75 ease-out w-full h-12 px-md rounded-[4rem] outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black antialiased bg-pansy hover:bg-teasel active:bg-teasel text-white;
+        @apply relative transition duration-75 ease-out w-full h-12 px-md rounded-[0.5rem] outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black antialiased bg-pansy hover:bg-teasel active:bg-teasel text-white;
     }
 }
