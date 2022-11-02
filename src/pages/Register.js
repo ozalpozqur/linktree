@@ -36,7 +36,7 @@ export default function Register() {
 	return (
 		<div className="flex justify-center">
 			<main className="relative pt-8 flex w-full md:py-lg md:px-2xl lg:p-12 lg:w-2/3 justify-center">
-				<div className="p-lg pt-16 lg:!pt-24 lg:w-[640px]">
+				<div className="p-lg pt-16 lg:!pt-24 w-full lg:w-[600px]">
 					<div className="md:container mx-auto">
 						<div className="mb-2xl">
 							<h1 className="text-black text-[32px] tracking-[-1px] lg:tracking-[-2px] lg:text-[3rem] font-extrabold leading-heading mb-4">
