@@ -58,7 +58,7 @@ export default function Register() {
 									/>
 								</div>
 							</div>
-							<div className="rounded-[10px] relative focus-within:ring-2 focus-within:ring-black transition ease-out duration-75 hover:shadow-[inset_0_0_0_2px_#e0e2d9] hover:focus-within:shadow-none">
+							<div className="rounded-[10px] relative focus-within:ring-2 focus-within:ring-black transition ease-out duration-75 hover:shadow-[inset_0_0_0_2px_#e0e2d9] hover:focus-within:shadow-none [&:focus-within~span]:block">
 								<div className="flex rounded-[10px] leading-[48px] border-solid border-2 border-transparent">
 									<input
 										ref={usernameRef}
@@ -72,7 +72,7 @@ export default function Register() {
 									/>
 								</div>
 							</div>
-							<span className="block leading-none text-[12px] text-pansy mt-1 text-right pr-1 -mt-1">
+							<span className="leading-none text-[12px] text-pansy mt-1 text-right pr-1 -mt-1 hidden">
 								English letters and numbers only
 							</span>
 							<div className="rounded-[10px] relative focus-within:ring-2 focus-within:ring-black transition ease-out duration-75 hover:shadow-[inset_0_0_0_2px_#e0e2d9] hover:focus-within:shadow-none">
