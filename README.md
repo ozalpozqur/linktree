@@ -3,12 +3,7 @@
 You can see the preview of the app here: [https://linktree-alpha.vercel.app](https://linktree-alpha.vercel.app)
 
 ## Previews
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px">
-<img src="public/github/1.png">
-<img src="public/github/2.png">
-<img src="public/github/3.png">
-<img src="public/github/4.png">
-</div>
+![picture alt](public/github/preview.png 'Preview image of the app')
 
 
 ## Features
