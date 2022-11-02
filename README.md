@@ -25,15 +25,15 @@ To learn more about Altogic and React.js, you can take a look at the following r
 -   [Altogic Client Library](https://www.altogic.com/client/) - learn about how to design your backend in Altogic
 -   [React.js Documentation](https://reactjs.org/docs/getting-started.html) - learn about React.js features and API.
 
+## Learn More
+
+To learn more about Altogic and React.js, you can take a look at the following resources:
+
+-   [Altogic Client API Reference](https://clientapi.altogic.com/v2.2.0/modules.html) - learn about Altogic Client Library features
+-   [Altogic Docs](https://www.altogic.com/docs/) - learn about how to design your backend in Altogic
+-   [Altogic Client Library](https://www.altogic.com/client/) - learn about how to design your backend in Altogic
+-   [React.js Documentation](https://reactjs.org/docs/getting-started.html) - learn about React.js features and API.
+
 ## Contribution
 
 Your feedback and contributions are welcome! Please open a pull request for contributions. If you need the backend for this app, you can contact us at [Discord Server](https://discord.gg/zDTnDPBxRz).
-
-
-## Conclusion
-Congratulations!✨
-
-You had completed the most critical part of the Authentication flow, which includes private routes, sign-up, sign-in, and sign-out operations.
-
-If you have any questions about Altogic or want to share what you have built, please post a message in our [community forum](https://community.altogic.com/home) or [discord channel](https://discord.gg/zDTnDPBxRz).
-
