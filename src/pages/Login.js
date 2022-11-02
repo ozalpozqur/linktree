@@ -75,7 +75,7 @@ export default function Login() {
 							<div className="w-full mt-2">
 								<button className="submit-btn" type="submit">
 									<span className="flex justify-center items-center">
-										<span className="block font-semibold text-md">Log In</span>
+										<span className="block font-semibold text-md">Login to your account </span>
 									</span>
 								</button>
 							</div>
