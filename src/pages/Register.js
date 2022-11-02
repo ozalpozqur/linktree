@@ -40,7 +40,7 @@ export default function Register() {
 					<div className="md:container mx-auto">
 						<div className="mb-2xl">
 							<h1 className="text-black text-[32px] tracking-[-1px] lg:tracking-[-2px] lg:text-[3rem] font-extrabold leading-heading mb-4">
-								Create your account
+								Create an account
 							</h1>
 						</div>
 						<ShowApiError error={error} />
