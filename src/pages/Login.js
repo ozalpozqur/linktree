@@ -37,7 +37,7 @@ export default function Login() {
 					<div className="md:container mx-auto">
 						<div className="mb-2xl">
 							<h1 className="text-black text-[32px] tracking-[-1px] lg:tracking-[-2px] lg:text-[3rem] font-extrabold leading-heading mb-4">
-								Log in to your Linktree
+								Login to your account
 							</h1>
 						</div>
 						<ShowApiError error={error} />
@@ -82,7 +82,7 @@ export default function Login() {
 						</form>
 					</div>
 					<p className="text-black text-sm mt-4 text-center">
-						Don't have a Linktree account?{' '}
+						Don't have an account?{' '}
 						<Link
 							to="/register"
 							className="text-pansy inline-flex focus-visible:outline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 underline"
